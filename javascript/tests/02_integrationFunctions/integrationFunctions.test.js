@@ -10,8 +10,29 @@ import axios from 'axios';
  * @returns {Object}
  */
 export const integrationFunctions = (integrationConfig) => {
-    // eslint-disable-line no-unused-vars
-    // Write your solution here
+    let integrationFuncs = {};
+    for (let key in integrationConfig) {
+        integrationFuncs[key] = integrationConfig[key].methods.reduce((result, method) => {
+            result[method] = apiFunctionFor(integrationConfig[key].url, method);
+            return result;
+        }, {});
+    }
+
+    return integrationFuncs;
+};
+
+const apiFunctionFor = (url, method) => {
+    return (config) => {
+        if (config && config.id) {
+            let { id } = config;
+            url = url.replace(':id', id);
+        }
+
+        axios({
+            url: url,
+            method: method,
+        });
+    };
 };
 
 /**
