@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './slider.scss';
 
 /**
@@ -15,10 +15,25 @@ import './slider.scss';
  * c. The Slider should be able to take different types of slides. For example,
  * it could be a single image or a set of tiles. Reference Beatport.com for an example
  */
-export const Slider = () => {
+export const Slider = ({ interval = 4, children = [] }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (currentIndex === children.length - 1) {
+                setCurrentIndex(0);
+            }
+            else {
+                setCurrentIndex(currentIndex + 1);
+            }
+
+        }, interval * 1000);
+        return () => clearTimeout(timer);
+    }, [interval, currentIndex]);
+
     return (
         <div className="slider">
-            Write Code Here
+            {Array.isArray(children) ? children[currentIndex] : children}
         </div>
     );
 };

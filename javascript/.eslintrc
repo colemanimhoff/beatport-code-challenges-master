@@ -43,8 +43,10 @@
         "import/resolver": {
             "babel-module": {},
             "node": {
-                "paths": ["."]
-              }
+                "paths": [
+                    "."
+                ]
+            }
         }
     },
     "rules": {
@@ -69,13 +71,31 @@
                 ]
             }
         ],
-        "space-in-parens": ["error", "never"],
-        "react/jsx-equals-spacing": [2, "never"],
-        "react/self-closing-comp": ["error", {
-            "component": true,
-            "html": true
-        }],
-        "react/jsx-curly-spacing": [2, {"when": "never", "attributes": {"allowMultiline": false}, "children": true}],
+        "space-in-parens": [
+            "error",
+            "never"
+        ],
+        "react/jsx-equals-spacing": [
+            2,
+            "never"
+        ],
+        "react/self-closing-comp": [
+            "error",
+            {
+                "component": true,
+                "html": true
+            }
+        ],
+        "react/jsx-curly-spacing": [
+            2,
+            {
+                "when": "never",
+                "attributes": {
+                    "allowMultiline": false
+                },
+                "children": true
+            }
+        ],
         "jsx-a11y/anchor-is-valid": "off",
         "react-hooks/rules-of-hooks": "error",
         "react/jsx-uses-react": 2,
@@ -204,17 +224,23 @@
         "no-caller": 2,
         "no-catch-shadow": 2,
         "no-cond-assign": 2,
-        "no-console": [
+        // "no-console": [
+        //     2,
+        //     {
+        //         "allow": [
+        //             "warn",
+        //             "error",
+        //             "info"
+        //         ]
+        //     }
+        // ],
+        "arrow-spacing": [
             2,
             {
-                "allow": [
-                    "warn",
-                    "error",
-                    "info"
-                ]
+                "after": true,
+                "before": true
             }
         ],
-        "arrow-spacing": [2, { "after": true, "before": true }],
         "no-constant-condition": 2,
         "no-delete-var": 2,
         "no-div-regex": 2,
