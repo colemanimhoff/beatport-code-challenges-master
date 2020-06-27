@@ -1,25 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Slider } from './components/Slider';
 import { Tile, Tiles } from './components/Tiles';
-import fixtures from './fixtures.json';
+import { mockApi } from './helpers/mockApi';
 import './app.scss';
-
-const inGroupsOf = (images, num) => {
-    return images.reduce((result, image, index, array) => {
-        if (index % num === 0) {
-            result.push([image, array[index + 1]]);
-        }
-        return result;
-    }, []);
-};
 
 const App = () => {
     const [images, setImages] = useState([]);
     const [groupedImages, setGroupedImages] = useState([]);
 
     useEffect(() => {
-        setImages(fixtures);
-        setGroupedImages(inGroupsOf(fixtures, 2));
+        setImages(mockApi.all);
+        setGroupedImages(mockApi.inGroupsOfTwo);
     }, []);
 
     return (
