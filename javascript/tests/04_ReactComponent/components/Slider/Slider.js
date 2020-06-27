@@ -39,8 +39,18 @@ export const Slider = ({ interval = 4, children = [] }) => {
     }, [interval, currentIndex, paused]);
 
     return (
-        <div className="slider" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            {Array.isArray(children) ? children[currentIndex] : children}
+        <div className="slider-wrapper">
+            <div className="button-wrapper">
+                <button>
+                    <i className="fa fa-caret-left" aria-hidden="true" />
+                </button>
+                <button>
+                    <i className="fa fa-caret-right" aria-hidden="true" />
+                </button>
+            </div>
+            <div className="slider" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                {Array.isArray(children) ? children[currentIndex] : children}
+            </div>
         </div>
     );
 };

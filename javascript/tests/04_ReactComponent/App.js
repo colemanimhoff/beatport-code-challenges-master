@@ -6,11 +6,13 @@ import './app.scss';
 
 const App = () => {
     const [images, setImages] = useState([]);
-    const [groupedImages, setGroupedImages] = useState([]);
+    const [groupedByTwo, setGroupedByTwo] = useState([]);
+    // const [groupedByFour, setGroupedByFour] = useState([]);
 
     useEffect(() => {
         setImages(mockApi.all);
-        setGroupedImages(mockApi.inGroupsOfTwo);
+        setGroupedByTwo(mockApi.inGroupsOfTwo);
+        // setGroupedByFour(mockApi.inGroupsOfFour);
     }, []);
 
     return (
@@ -18,15 +20,20 @@ const App = () => {
             <Slider>
                 {images.map(image => <Tile key={image.title} image={image}/>)}
             </Slider>
-            <Slider interval={3}>
-                {groupedImages.map((group, index) => {
+            <Slider interval={5}>
+                {groupedByTwo.map((group, index) => {
+                    return <Tiles key={`group-${index}`} images={group}/>;
+                })}
+            </Slider>
+            {/* <Slider interval={3}>
+                {groupedByFour.map((group, index) => {
                     return <Tiles key={`group-${index}`} images={group}/>;
                 })}
             </Slider>
             <Slider interval={2}>
                 <p>Created By</p>
                 <p>Coleman Imhoff</p>
-            </Slider>
+            </Slider> */}
         </>
     );
 };
