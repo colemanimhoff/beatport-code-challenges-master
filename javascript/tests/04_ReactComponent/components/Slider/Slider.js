@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './slider.scss';
+import { Footer } from '../Footer';
 
 /**
  * @type {React.Component}
@@ -39,7 +40,7 @@ export const Slider = ({ interval = 4, children = [] }) => {
     }, [interval, currentIndex, paused]);
 
     return (
-        <div className="slider-wrapper">
+        <div className="slider-wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className="button-wrapper">
                 <button>
                     <i className="fa fa-caret-left" aria-hidden="true" />
@@ -48,9 +49,10 @@ export const Slider = ({ interval = 4, children = [] }) => {
                     <i className="fa fa-caret-right" aria-hidden="true" />
                 </button>
             </div>
-            <div className="slider" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <div className="slider">
                 {Array.isArray(children) ? children[currentIndex] : children}
             </div>
+            <Footer childCount={children.length} currentIndex={currentIndex}/>
         </div>
     );
 };

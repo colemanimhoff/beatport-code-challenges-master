@@ -1,3 +1,18 @@
 body {
   background-color: #262626;
 }
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  font-size: 21px;
+}

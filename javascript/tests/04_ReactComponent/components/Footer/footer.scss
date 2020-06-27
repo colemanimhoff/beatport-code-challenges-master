@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0px;
+
+  button {
+    display: block;
+    background-color: #646464;
+    width: 100%;
+    margin-right: 7px;
+    height: 3.5px;
+  }
+
+  button.active {
+    background-color: #bbbbbb;
+  }
+
+  button:last-child {
+    margin-right: 0px;
+  }
+}

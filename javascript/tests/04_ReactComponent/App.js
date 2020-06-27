@@ -31,9 +31,9 @@ const App = () => {
                     return <Tiles key={`group-${index}`} images={group}/>;
                 })}
             </Slider>
-            <Slider interval={2}>
-                <p>Created By</p>
-                <p>Coleman Imhoff</p>
+            <Slider interval={3}>
+                <p>CREATED BY</p>
+                <p>COLEMAN IMHOFF</p>
             </Slider>
         </>
 
