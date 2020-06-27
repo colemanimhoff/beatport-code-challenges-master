@@ -17,16 +17,16 @@ const App = () => {
 
     return (
         <>
-            <Slider>
+            <Slider title="IN GROUPS OF 1">
                 {images.map(image => <Tile key={image.title} image={image}/>)}
             </Slider>
-            <Slider interval={5}>
+            <Slider interval={5} title="IN GROUPS OF 2">
                 {groupedByTwo.map((group, index) => {
                     return <Tiles key={`group-${index}`} images={group}/>;
                 })}
             </Slider>
 
-            <Slider interval={3}>
+            <Slider interval={3} title="IN GROUPS OF 4">
                 {groupedByFour.map((group, index) => {
                     return <Tiles key={`group-${index}`} images={group}/>;
                 })}

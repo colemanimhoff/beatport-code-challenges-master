@@ -17,7 +17,7 @@ import { Header } from '../Header';
  * c. The Slider should be able to take different types of slides. For example,
  * it could be a single image or a set of tiles. Reference Beatport.com for an example
  */
-export const Slider = ({ interval = 4, children = [] }) => {
+export const Slider = ({ interval = 4, children = [], title = 'BEATPORT CHALLENGE' }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [paused, setPaused] = useState(false);
 
@@ -25,18 +25,30 @@ export const Slider = ({ interval = 4, children = [] }) => {
     const handleMouseLeave = () => setPaused(false);
     const setManualIndex = (index) => setCurrentIndex(index);
 
+    const increment = () => {
+        if (currentIndex === children.length - 1) {
+            setCurrentIndex(0);
+        }
+        else {
+            setCurrentIndex(currentIndex + 1);
+        }
+    };
+
+    const decrement = () => {
+        if (currentIndex === 0) {
+            setCurrentIndex(children.length - 1);
+        }
+        else {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
+
     useEffect(() => {
         if (paused) {
             return;
         }
         const timer = setTimeout(() => {
-            if (currentIndex === children.length - 1) {
-                setCurrentIndex(0);
-            }
-            else {
-                setCurrentIndex(currentIndex + 1);
-            }
-
+            increment();
         }, interval * 1000);
         return () => clearTimeout(timer);
     }, [interval, currentIndex, paused]);
@@ -47,7 +59,11 @@ export const Slider = ({ interval = 4, children = [] }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <Header />
+            <Header
+                increment={increment}
+                decrement={decrement}
+                title={title}
+            />
             <div className="slider">
                 {Array.isArray(children) ? children[currentIndex] : children}
             </div>

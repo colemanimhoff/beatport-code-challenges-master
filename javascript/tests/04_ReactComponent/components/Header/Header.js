@@ -1,10 +1,11 @@
 import React from 'react';
 import { HeaderButtons } from './HeaderButtons';
 
-export const Header = () => {
+export const Header = ({ increment, decrement, title }) => {
     return (
         <div className="header">
-            <HeaderButtons />
+            <h1>{title}</h1>
+            <HeaderButtons increment={increment} decrement={decrement}/>
         </div>
     );
 };

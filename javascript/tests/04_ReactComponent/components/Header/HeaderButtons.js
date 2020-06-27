@@ -1,14 +1,16 @@
 import React from 'react';
 
-export const HeaderButtons = () => {
+export const HeaderButtons = ({ increment, decrement }) => {
+    const handleDecrement = () => decrement();
+    const handleIncrement = () => increment();
     return (
-        <>
-            <button>
+        <div>
+            <button onClick={handleDecrement}>
                 <i className="fa fa-caret-left" aria-hidden="true" />
             </button>
-            <button>
+            <button onClick={handleIncrement}>
                 <i className="fa fa-caret-right" aria-hidden="true" />
             </button>
-        </>
+        </div>
     );
 };
