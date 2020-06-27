@@ -34,6 +34,7 @@ const App = () => {
             <Slider interval={3}>
                 <p>CREATED BY</p>
                 <p>COLEMAN IMHOFF</p>
+                <i className="fas fa-headphones" />
             </Slider>
         </>
 

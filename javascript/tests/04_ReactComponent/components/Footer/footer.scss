@@ -5,11 +5,18 @@
   margin: 14px 0px;
 
   button {
-    display: block;
     background-color: #646464;
     width: 100%;
     margin-right: 7px;
     height: 3.5px;
+  }
+
+  button:after {
+    content:'';
+    display: inline-block;
+    height: 7px;
+    width: 100%;
+    margin: 0px;
   }
 
   button.active {

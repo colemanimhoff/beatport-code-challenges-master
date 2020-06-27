@@ -22,6 +22,7 @@ export const Slider = ({ interval = 4, children = [] }) => {
 
     const handleMouseEnter = () => setPaused(true);
     const handleMouseLeave = () => setPaused(false);
+    const setManualIndex = (index) => setCurrentIndex(index);
 
     useEffect(() => {
         if (paused) {
@@ -40,7 +41,11 @@ export const Slider = ({ interval = 4, children = [] }) => {
     }, [interval, currentIndex, paused]);
 
     return (
-        <div className="slider-wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div
+            className="slider-wrapper"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <div className="button-wrapper">
                 <button>
                     <i className="fa fa-caret-left" aria-hidden="true" />
@@ -52,7 +57,11 @@ export const Slider = ({ interval = 4, children = [] }) => {
             <div className="slider">
                 {Array.isArray(children) ? children[currentIndex] : children}
             </div>
-            <Footer childCount={children.length} currentIndex={currentIndex}/>
+            <Footer
+                childCount={children.length}
+                currentIndex={currentIndex}
+                setManualIndex={setManualIndex}
+            />
         </div>
     );
 };

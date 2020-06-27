@@ -1,11 +1,17 @@
 import React from 'react';
 import { FooterButton } from './FooterButton';
 
-export const Footer = ({ childCount, currentIndex }) => {
+export const Footer = ({ childCount, currentIndex, setManualIndex }) => {
     const renderButtons = () => {
         let buttons = [];
         for (let i = 0; i < childCount; i++) {
-            buttons.push(<FooterButton currentIndex={currentIndex} index={i} />);
+            buttons.push(
+                <FooterButton
+                    currentIndex={currentIndex}
+                    index={i}
+                    setManualIndex={setManualIndex}
+                />
+            );
         }
 
         return buttons;
