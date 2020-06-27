@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Slider } from './Slider';
+import App from './App';
 
 ReactDOM.render(
-    <Slider>
-        <p>Hi</p>
-        <p>Bye</p>
-    </Slider>,
+    <App />,
     document.getElementById('root')
 );

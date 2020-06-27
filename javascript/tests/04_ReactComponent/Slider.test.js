@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { Slider } from './Slider';
+import { Slider } from './components/Slider';
 
 describe('Slider', () => {
     it('mounts', () => {

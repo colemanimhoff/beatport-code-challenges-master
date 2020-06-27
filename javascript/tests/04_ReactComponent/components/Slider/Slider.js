@@ -17,8 +17,15 @@ import './slider.scss';
  */
 export const Slider = ({ interval = 4, children = [] }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [paused, setPaused] = useState(false);
+
+    const handleMouseEnter = () => setPaused(true);
+    const handleMouseLeave = () => setPaused(false);
 
     useEffect(() => {
+        if (paused) {
+            return;
+        }
         const timer = setTimeout(() => {
             if (currentIndex === children.length - 1) {
                 setCurrentIndex(0);
@@ -29,10 +36,10 @@ export const Slider = ({ interval = 4, children = [] }) => {
 
         }, interval * 1000);
         return () => clearTimeout(timer);
-    }, [interval, currentIndex]);
+    }, [interval, currentIndex, paused]);
 
     return (
-        <div className="slider">
+        <div className="slider" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {Array.isArray(children) ? children[currentIndex] : children}
         </div>
     );
