@@ -2,33 +2,10 @@
     margin: 28px;
     width: 600px;
 
-    .button-wrapper {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        margin-bottom: 14px;
-
-        button:nth-child(1) {
-            margin-right: 7px;
-        }
-
-        button:hover {
-            background-color: #3f3f3f;
-        }
-
-        button {
-            background-color: #373737;
-            border-radius: 3.5px;
-            color: #ffffff;
-            font-size: 21px;
-            padding: 3.5px 10.5px;
-        }
-    }
-
     .slider {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 177px;
+        min-height: 75px;
     }
 }

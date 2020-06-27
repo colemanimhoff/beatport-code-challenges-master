@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './slider.scss';
 import { Footer } from '../Footer';
+import { Header } from '../Header';
 
 /**
  * @type {React.Component}
@@ -46,14 +47,7 @@ export const Slider = ({ interval = 4, children = [] }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="button-wrapper">
-                <button>
-                    <i className="fa fa-caret-left" aria-hidden="true" />
-                </button>
-                <button>
-                    <i className="fa fa-caret-right" aria-hidden="true" />
-                </button>
-            </div>
+            <Header />
             <div className="slider">
                 {Array.isArray(children) ? children[currentIndex] : children}
             </div>

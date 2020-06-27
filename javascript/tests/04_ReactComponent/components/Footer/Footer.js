@@ -8,6 +8,7 @@ export const Footer = ({ childCount, currentIndex, setManualIndex }) => {
             buttons.push(
                 <FooterButton
                     currentIndex={currentIndex}
+                    key={'footerbutton-' + i}
                     index={i}
                     setManualIndex={setManualIndex}
                 />
