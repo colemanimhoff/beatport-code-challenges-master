@@ -5,7 +5,7 @@ const initResize = () => {
    * vertically.
    */
 
-    const body = document.querySelector('body');
+    const body = document.querySelector('body'); // or panel's parent element
     const panel = document.getElementById('panel');
     const resize = document.getElementById('resize');
 
