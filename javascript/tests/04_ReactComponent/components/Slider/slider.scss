@@ -1,11 +1,31 @@
-.slider-wrapper {
+.slider {
     margin: 28px;
     width: 600px;
 
-    .slider {
+    .slider-content {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 75px;
+        overflow: hidden;
+    }
+
+    .slider-content.large {
+        .tile {
+            height: 375px;
+        }
+    }
+
+    .slider-content.grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 14px;
+          
+            img {
+              height: 177px;
+            }
+    }
+
+    .slider-content.small {
+        height: 75px;
     }
 }

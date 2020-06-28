@@ -25,5 +25,6 @@ const shuffle = (array) => {
 export const mockApi = {
     all: shuffle(fixtures),
     inGroupsOfTwo: inGroupsOf(fixtures, 2),
-    inGroupsOfFour: inGroupsOf(fixtures, 4)
+    inGroupsOfFour: inGroupsOf(fixtures, 4),
+    inGroupsOfSix: inGroupsOf(fixtures, 6)
 };

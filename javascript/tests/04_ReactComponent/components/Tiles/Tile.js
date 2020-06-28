@@ -4,7 +4,7 @@ export const Tile = ({ image }) => {
     const { url, title } = image;
 
     return (
-        <div className="tile-wrapper">
+        <div className="tile">
             <img alt={title} src={url} title={title} />
         </div>
     );
