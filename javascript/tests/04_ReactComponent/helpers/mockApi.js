@@ -15,7 +15,8 @@ const inGroupsOf = (array, num) => {
         currentIndex += num;
         currentGroup++;
     }
-    return set;
+
+    return shuffle(set);
 };
 
 const shuffle = (array) => {
