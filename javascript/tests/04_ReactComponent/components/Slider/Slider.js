@@ -37,7 +37,7 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
             setCurrentIndex(0);
         }
         else {
-            setCurrentIndex(currentIndex + 1);
+            setCurrentIndex((prevIndex) => prevIndex + 1);
         }
     };
 
@@ -46,7 +46,7 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
             setCurrentIndex(children.length - 1);
         }
         else {
-            setCurrentIndex(currentIndex - 1);
+            setCurrentIndex((prevIndex) => prevIndex - 1);
         }
     };
 
