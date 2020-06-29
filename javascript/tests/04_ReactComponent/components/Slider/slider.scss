@@ -2,6 +2,16 @@
     margin: 28px;
     width: 600px;
 
+    button:focus {
+      outline: 0;
+    }
+    
+    h1, p {
+      font-family: 'Oswald', sans-serif;
+      color: #ffffff;
+      font-size: 21px;
+    }
+
     .slider-header {
         display: flex;
         justify-content: space-between;
