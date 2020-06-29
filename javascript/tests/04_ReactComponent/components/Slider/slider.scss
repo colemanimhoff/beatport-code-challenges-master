@@ -2,6 +2,8 @@
     margin: 28px;
     width: 600px;
 
+    // slider-footer sass
+
     .slider-content {
         display: flex;
         align-items: center;
@@ -28,4 +30,6 @@
     .slider-content.small {
         height: 75px;
     }
+
+    // slider-footer sass
 }

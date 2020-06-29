@@ -22,15 +22,15 @@ export const integrationFunctions = (integrationConfig) => {
 };
 
 const apiFunctionFor = (url, method) => {
-    return (config) => {
-        if (config && config.id) {
-            let { id } = config;
-            url = url.replace(':id', id);
+    return (params, config) => {
+        if (params) {
+            url = url.replace(':id', params.id);
         }
 
         axios({
             url: url,
             method: method,
+            ...config
         });
     };
 };

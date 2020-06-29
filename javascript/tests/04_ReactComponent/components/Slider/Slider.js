@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './slider.scss';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
@@ -32,23 +32,23 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
     const handleMouseLeave = () => setPaused(false);
     const setManualIndex = (index) => setCurrentIndex(index);
 
-    const increment = () => {
+    const increment = useCallback(() => {
         if (currentIndex === children.length - 1) {
             setCurrentIndex(0);
         }
         else {
             setCurrentIndex((prevIndex) => prevIndex + 1);
         }
-    };
+    });
 
-    const decrement = () => {
+    const decrement = useCallback(() => {
         if (currentIndex === 0) {
             setCurrentIndex(children.length - 1);
         }
         else {
             setCurrentIndex((prevIndex) => prevIndex - 1);
         }
-    };
+    });
 
     useEffect(() => {
         if (paused || !withAutoIncrement) {
