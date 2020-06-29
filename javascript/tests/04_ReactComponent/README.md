@@ -9,7 +9,11 @@ Meet the requirements:
 - Sliders take in an interval that defaults to 4 seconds
 - Sliders are customizable and many instances of them can exist in the same view
 
-Get inspiration from `Beatport.com`'s sliders and try to mimic them as much as possible.
+Get inspiration from [Beatport](https://www.beatport.com/) sliders and try to mimic them as much as possible.
+
+Any child can be passed to a slider, with a `className` of `tile`.
+
+`Tile` and `Tiles` are special child components to the `Slider` that take an array of images.
 
 ## The Slider Component
 
@@ -31,19 +35,15 @@ The `Slider` component maintains the following state:
 
 `paused` is set during the `mouseEnter` and `mouseLeave` events
 
-Any child can be passed to a slider, with a `className` of `tile`.
-
-`Tile` and `Tiles` are special child components to the `Slider` that take an array of images.
-
 ## File Structure
 
-`components`
-  `Slider`
-    `index.js`
-    `slider.scss`
-    `Slider.js`
-    `SliderHeader.js`
-    `SliderHeaderButtons.js`
-    `SliderFooterButtons`
-    `Tiles.js`
-    `Tile.js`
+components
+ |_Slider
+    |_index.js
+    |_slider.scss
+    |_Slider.js
+    |_sliderHeader.js
+    |_SliderHeaderButtons.js
+    |_SliderFooterButtons
+    |_Tiles.js
+    |_Tile.js
