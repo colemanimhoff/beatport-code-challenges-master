@@ -37,13 +37,14 @@ The `Slider` component maintains the following state:
 
 ## File Structure
 
-components
- |_Slider
-    |_index.js
-    |_slider.scss
-    |_Slider.js
-    |_sliderHeader.js
-    |_SliderHeaderButtons.js
-    |_SliderFooterButtons
-    |_Tiles.js
-    |_Tile.js
+```bash
+└── Slider
+    ├── Slider.js
+    ├── SliderFooterButton.js
+    ├── SliderHeader.js
+    ├── SliderHeaderButtons.js
+    ├── SliderTile.js
+    ├── SliderTiles.js
+    ├── index.js
+    └── slider.scss
+```
