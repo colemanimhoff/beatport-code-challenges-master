@@ -58,7 +58,7 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
             increment();
         }, interval * 1000);
         return () => clearTimeout(timer);
-    }, [interval, currentIndex, paused]);
+    }, [increment, interval, paused, withAutoIncrement]);
 
     return (
         <div
