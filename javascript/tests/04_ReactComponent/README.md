@@ -26,3 +26,14 @@ The `Slider` component maintains the following state:
 - if the `currentIndex` is the last index in the array, when incrementing, the `currentIndex` will return to 0. If the `currentIndex` is the first index in the array, when decrementing, the index will return the last index of the array.
 
 `paused` is set during the `mouseEnter` and `mouseLeave` events
+
+
+
+`components`
+  `Slider`
+    `index.js`
+    `slider.scss`
+    `Slider.js`
+    `SliderHeader.js`
+    `SliderHeaderButtons.js`
+    `SliderFooterButtons`
