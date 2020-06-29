@@ -2,13 +2,65 @@
     margin: 28px;
     width: 600px;
 
-    // slider-footer sass
+    .slider-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 14px;
+      
+        button:nth-child(1) {
+            margin-right: 7px;
+        }
+      
+        button:hover {
+            background-color: #3f3f3f;
+        }
+      
+        button {
+            background-color: #373737;
+            border-radius: 3.5px;
+            color: #ffffff;
+            font-size: 21px;
+            padding: 3.5px 10.5px;
+        }
+      }
 
     .slider-content {
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
+
+        @keyframes fadeIn {
+            0% {
+              opacity: 0;
+            }
+          
+            25% {
+              opacity: .25;
+            }
+          
+            50% {
+              opacity: .5;
+            }
+          
+            75% {
+              opacity: .75;
+            }
+          
+            100% {
+              opacity: 1;
+            }
+          }
+          
+          img {
+            object-fit: cover;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            width: 100%;
+          }
     }
 
     .slider-content.large {
@@ -31,5 +83,33 @@
         height: 75px;
     }
 
-    // slider-footer sass
+    .slider-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 14px 0px;
+      
+        button {
+          background-color: #646464;
+          width: 100%;
+          margin-right: 5.25px;
+          height: 3.5px;
+        }
+      
+        button:after {
+          content:'';
+          display: inline-block;
+          height: 7px;
+          width: 100%;
+          margin: 0px;
+        }
+      
+        button.active {
+          background-color: #bbbbbb;
+        }
+      
+        button:last-child {
+          margin-right: 0px;
+        }
+      }
 }

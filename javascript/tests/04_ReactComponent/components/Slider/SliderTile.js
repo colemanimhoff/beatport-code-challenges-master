@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Tile = ({ image }) => {
+export const SliderTile = ({ image }) => {
     const { url, title } = image;
 
     return (

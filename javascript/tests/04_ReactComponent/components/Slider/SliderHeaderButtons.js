@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const HeaderButtons = ({ increment, decrement }) => {
+export const SliderHeaderButtons = ({ increment, decrement }) => {
     return (
         <div>
             <button onClick={decrement}>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const FooterButton = ({ currentIndex, index, setManualIndex }) => {
+export const SliderFooterButton = ({ currentIndex, index, setManualIndex }) => {
     const handleOnClick = () => setManualIndex(index);
     return (
         <button

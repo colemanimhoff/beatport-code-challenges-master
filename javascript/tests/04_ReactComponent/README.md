@@ -37,3 +37,5 @@ The `Slider` component maintains the following state:
     `SliderHeader.js`
     `SliderHeaderButtons.js`
     `SliderFooterButtons`
+    `Tiles.js`
+    `Tile.js`

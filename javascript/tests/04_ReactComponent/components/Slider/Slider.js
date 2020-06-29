@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './slider.scss';
-import { Footer } from '../Footer';
-import { Header } from '../Header';
+import { SliderFooterButton } from './SliderFooterButton';
+import { SliderHeader } from './SliderHeader';
 
 /**
  * @type {React.Component}
@@ -30,25 +30,25 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
 
     const handleMouseEnter = () => setPaused(true);
     const handleMouseLeave = () => setPaused(false);
-    const setManualIndex = (index) => setCurrentIndex(index);
+    const setManualIndex = useCallback((index) => setCurrentIndex(index));
 
     const increment = useCallback(() => {
         if (currentIndex === children.length - 1) {
             setCurrentIndex(0);
         }
         else {
-            setCurrentIndex((prevIndex) => prevIndex + 1);
+            setCurrentIndex(currentIndex + 1);
         }
-    });
+    }, [children, currentIndex]);
 
     const decrement = useCallback(() => {
         if (currentIndex === 0) {
             setCurrentIndex(children.length - 1);
         }
         else {
-            setCurrentIndex((prevIndex) => prevIndex - 1);
+            setCurrentIndex(currentIndex - 1);
         }
-    });
+    }, [children, currentIndex]);
 
     useEffect(() => {
         if (paused || !withAutoIncrement) {
@@ -65,7 +65,7 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
             className="slider"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
-            <Header
+            <SliderHeader
                 increment={increment}
                 decrement={decrement}
                 title={title}
@@ -74,11 +74,17 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
             <div className={'slider-content ' + type}>
                 {Array.isArray(children) ? children[currentIndex] : children}
             </div>
-            <Footer
-                childCount={children.length}
-                currentIndex={currentIndex}
-                setManualIndex={setManualIndex}
-            />
+            <div className="slider-footer">
+                {children.map((child, index) => {
+                    return <SliderFooterButton
+                        childCount={children.length}
+                        currentIndex={currentIndex}
+                        index={index}
+                        key={child.key + '-' + index + '-footer-button'}
+                        setManualIndex={setManualIndex}
+                    />;
+                })}
+            </div>
         </div>
     );
 };
