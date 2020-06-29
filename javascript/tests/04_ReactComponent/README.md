@@ -35,6 +35,10 @@ The `Slider` component maintains the following state:
 
 `paused` is set during the `mouseEnter` and `mouseLeave` events
 
+`SliderHeaderButtons` and `SliderFooterButtons` are fully functional regardless of whether `withAutoIncrement` is included.
+
+Open source images are currently being provided from fixture data via [Unsplash](https://unsplash.com/).
+
 ## File Structure
 
 ```bash
