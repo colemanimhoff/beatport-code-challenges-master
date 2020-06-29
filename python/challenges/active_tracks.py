@@ -29,4 +29,16 @@ The list may contain duplicate tracks.
 
 
 def active_tracks(tracks):
-    pass
+    active_tracks = []
+    tracks_dict = {}
+
+    for track in tracks:
+        id = track["id"]
+
+        if id in tracks_dict or not track["active"]:
+            continue
+        else:
+            tracks_dict[id] = True
+            active_tracks.append(id)
+
+    return active_tracks
