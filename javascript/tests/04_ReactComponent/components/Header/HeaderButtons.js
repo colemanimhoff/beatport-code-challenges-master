@@ -1,14 +1,12 @@
 import React from 'react';
 
 export const HeaderButtons = ({ increment, decrement }) => {
-    const handleDecrement = () => decrement();
-    const handleIncrement = () => increment();
     return (
         <div>
-            <button onClick={handleDecrement}>
+            <button onClick={decrement}>
                 <i className="fa fa-caret-left" aria-hidden="true" />
             </button>
-            <button onClick={handleIncrement}>
+            <button onClick={increment}>
                 <i className="fa fa-caret-right" aria-hidden="true" />
             </button>
         </div>

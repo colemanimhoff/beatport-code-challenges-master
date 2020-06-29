@@ -64,8 +64,7 @@ export const Slider = ({ children = [], interval = 4, title = 'BEATPORT CHALLENG
         <div
             className="slider"
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
+            onMouseLeave={handleMouseLeave}>
             <Header
                 increment={increment}
                 decrement={decrement}
